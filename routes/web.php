@@ -18,7 +18,21 @@ Route::get('/', function () {
 });
 
 Route::get('about', function () {
-    return view('about');
+    $team = array(
+        'id_1' => array(
+            'name' => 'Алексей',
+            'position' => 'Журналист'
+        ),
+        'id_2' => array(
+            'name' => 'Евгений',
+            'position' => 'Редактор'
+        ),
+        'id_3' => array(
+            'name' => 'Максим',
+            'position' => 'Биг Босс'
+        ),
+    );
+    return view('about', ['team' => $team]);
 });
 
 Route::get('articles', function () {
