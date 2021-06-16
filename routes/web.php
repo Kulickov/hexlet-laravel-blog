@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,24 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about', function () {
-    $team = array(
-        'id_1' => array(
-            'name' => 'Алексей',
-            'position' => 'Журналист'
-        ),
-        'id_2' => array(
-            'name' => 'Евгений',
-            'position' => 'Редактор'
-        ),
-        'id_3' => array(
-            'name' => 'Максим',
-            'position' => 'Биг Босс'
-        ),
-    );
-    return view('about', ['team' => $team]);
-});
+Route::get('about', [PageController::class, 'about']);
 
 Route::get('articles', function () {
-    return view('articles');
+    $articles = App\Models\Article::all();
+
+    return view('articles', ['articles' => $articles]);
 });

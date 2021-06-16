@@ -11,6 +11,13 @@
     </head>
     <body>
         <div class="container mt-4">
+            <div class="header__nav">
+                <a class="header__link" href="/">Главная</a>
+                <a class="header__link" href="/about">О блоге</a>
+                <a class="header__link" href="/articles">Статьи</a>
+            </div>
+        </div>
+        <div class="container mt-4">
             <h1>@yield('header')</h1>
             <div>
                 @yield('content')
