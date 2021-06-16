@@ -14,7 +14,7 @@
             <div class="header__nav">
                 <a class="header__link" href="/">Главная</a>
                 <a class="header__link" href="/about">О блоге</a>
-                <a class="header__link" href="/articles">Статьи</a>
+                <a class="header__link" href="{{route('articles.index')}}">Статьи</a>
             </div>
         </div>
         <div class="container mt-4">
